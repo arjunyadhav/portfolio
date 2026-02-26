@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(3, 3, 37);
+    margin: 0;
+    height: 100vh;             
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    font-family: Arial, sans-serif;
+}
+
+.simple {
+    background-color: rgb(4, 4, 84);
+    width: 250px;
+    height: 300px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;      /* optional: slightly rounded corners */
+}
+
+.simple p {
+    color: white;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.simple h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+.simple button {
+    color: aliceblue;
+    background-color: blueviolet;
+    padding: 5px 10px;       /* vertical and horizontal padding */
+    font-size: 10px;          /* proper font size */
+    text-align: center;
+    border: none;             /* removes default border */
+    border-radius: 5px;       /* optional: rounded corners */
+    cursor: pointer;          /* changes cursor on hover */
+    margin: 3px;              /* space between buttons */
+}
+.simple.course
+{
+    color: white;
+    font-size: 20px;
+    line-height: 1.5;
+}
+img{
+    border-radius: 50%;
+    border: rebeccapurple;
+    width: 100px;
+}
