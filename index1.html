@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Age Calculator</h1>
+        <p>Enter your date of birth to calculate your age:</p>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob">
+
+        <button id="calculateBtn">Calculate Age</button>
+
+        <div class="result" id="result">Your age will appear here.</div>
+    </div>
+
+    <script>
+        const calculateBtn = document.getElementById("calculateBtn");
+
+        calculateBtn.addEventListener("click", function() {
+            const dobValue = document.getElementById("dob").value;
+
+            if (!dobValue) {
+                document.getElementById("result").innerHTML = "Please select your date of birth!";
+                return;
+            }
+
+            const birthDate = new Date(dobValue);
+            const today = new Date();
+
+            let years = today.getFullYear() - birthDate.getFullYear();
+            let months = today.getMonth() - birthDate.getMonth();
+            let days = today.getDate() - birthDate.getDate();
+
+            // Adjust if days negative
+            if (days < 0) {
+                months--;
+                const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                days += lastMonth.getDate();
+            }
+
+            // Adjust if months negative
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            document.getElementById("result").innerHTML =
+                "You are " + years + " years, " + months + " months, and " + days + " days old.";
+        });
+    </script>
+
+</body>
+</html>
